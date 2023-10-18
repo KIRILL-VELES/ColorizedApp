@@ -23,7 +23,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         colorView.layer.cornerRadius = CGFloat(radiusWindow)
-        
         updateBackgroundColor()
     }
     
