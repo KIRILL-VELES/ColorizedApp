@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -115,13 +114,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="blueLabelView" destination="TKz-A9-dRT" id="i61-Pe-jPS"/>
                         <outlet property="blueSliderView" destination="V8Z-xz-dTb" id="eS9-u6-gTx"/>
-                        <outlet property="blueView" destination="TKz-A9-dRT" id="i61-Pe-jPS"/>
                         <outlet property="colorView" destination="CpH-uq-Bod" id="E7a-UL-3Jo"/>
+                        <outlet property="greenLabelView" destination="xWa-Kq-CWN" id="tSj-pQ-FdI"/>
                         <outlet property="greenSliderView" destination="bxB-G5-b32" id="OMa-UV-UHp"/>
-                        <outlet property="greenView" destination="xWa-Kq-CWN" id="tSj-pQ-FdI"/>
+                        <outlet property="redLabelView" destination="RTe-0H-WEs" id="0l8-Nj-S5Q"/>
                         <outlet property="redSliderView" destination="RvC-mG-gat" id="sjy-Nj-I8q"/>
-                        <outlet property="redView" destination="RTe-0H-WEs" id="0l8-Nj-S5Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

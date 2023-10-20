@@ -9,21 +9,24 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var colorView: UIView!
-    @IBOutlet weak var redView: UILabel!
-    @IBOutlet weak var greenView: UILabel!
-    @IBOutlet weak var blueView: UILabel!
+    @IBOutlet weak var redLabelView: UILabel!
+    @IBOutlet weak var greenLabelView: UILabel!
+    @IBOutlet weak var blueLabelView: UILabel!
     
     @IBOutlet weak var redSliderView: UISlider!
     @IBOutlet weak var greenSliderView: UISlider!
     @IBOutlet weak var blueSliderView: UISlider!
     
-    let radiusWindow = 20
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        colorView.layer.cornerRadius = CGFloat(radiusWindow)
+        setupColorView()
         updateBackgroundColor()
+    }
+    
+    // Mark: - Private Methods
+    
+    private func setupColorView() {
+        colorView.layer.cornerRadius = 20
     }
     
     private func updateBackgroundColor() {
@@ -37,27 +40,28 @@ class ViewController: UIViewController {
                                             alpha: 1.0)
     }
     
+    // Mark: IBAActions
+    
     @IBAction func redSliderAction() {
         updateBackgroundColor()
-        redView.text = String(
+        redLabelView.text = String(
             format: "%.2f",
             Float(redSliderView.value))
     }
     
     @IBAction func greenSliderAction() {
         updateBackgroundColor()
-        greenView.text = String(
+        greenLabelView.text = String(
             format: "%.2f",
             Float(greenSliderView.value))
     }
     
     @IBAction func blueSliderAction() {
         updateBackgroundColor()
-        blueView.text = String(
+        blueLabelView.text = String(
             format: "%.2f",
             Float(blueSliderView.value))
     }
 
-    
 }
 
