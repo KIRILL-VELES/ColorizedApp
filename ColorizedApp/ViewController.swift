@@ -40,7 +40,8 @@ class ViewController: UIViewController {
         
     }
     
-    // Mark: prvate func
+    // Mark: private func
+    
     private func setColor() {
         colorView.backgroundColor = UIColor(
             red: CGFloat(redSliderView.value),
