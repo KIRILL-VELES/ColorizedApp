@@ -39,7 +39,6 @@ class ViewController: UIViewController {
         default:
             blueLabelView.text = string(from: sender)
         }
-        
     }
     
     // Mark: private func
