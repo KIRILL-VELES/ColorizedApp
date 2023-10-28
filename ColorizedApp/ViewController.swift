@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var colorView: UIView!
+    
     @IBOutlet weak var redLabelView: UILabel!
     @IBOutlet weak var greenLabelView: UILabel!
     @IBOutlet weak var blueLabelView: UILabel!
@@ -19,49 +20,43 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupColorView()
-        updateBackgroundColor()
-    }
-    
-    // Mark: - Private Methods
-    
-    private func setupColorView() {
         colorView.layer.cornerRadius = 20
-    }
-    
-    private func updateBackgroundColor() {
-        let red = CGFloat(redSliderView.value)
-        let green = CGFloat(greenSliderView.value)
-        let blue = CGFloat(blueSliderView.value)
-        
-        colorView.backgroundColor = UIColor(red: red,
-                                            green: green,
-                                            blue: blue,
-                                            alpha: 1.0)
+        setValue()
+        setColor()
     }
     
     // Mark: IBAActions
     
-    @IBAction func redSliderAction() {
-        updateBackgroundColor()
-        redLabelView.text = String(
-            format: "%.2f",
-            Float(redSliderView.value))
+    @IBAction func sliderAction(_ sender: UISlider) {
+        setColor()
+        switch sender {
+        case redSliderView:
+            redLabelView.text = string(from: redSliderView)
+        case greenSliderView:
+            greenLabelView.text = string(from: greenSliderView)
+        default:
+            blueLabelView.text = string(from: blueSliderView)
+        }
+        
     }
     
-    @IBAction func greenSliderAction() {
-        updateBackgroundColor()
-        greenLabelView.text = String(
-            format: "%.2f",
-            Float(greenSliderView.value))
+    // Mark: prvate func
+    private func setColor() {
+        colorView.backgroundColor = UIColor(
+            red: CGFloat(redSliderView.value),
+            green: CGFloat(greenSliderView.value),
+            blue: CGFloat(blueSliderView.value),
+            alpha: 1
+        )
     }
     
-    @IBAction func blueSliderAction() {
-        updateBackgroundColor()
-        blueLabelView.text = String(
-            format: "%.2f",
-            Float(blueSliderView.value))
+    private func setValue() {
+        redLabelView.text = string(from: redSliderView)
+        greenLabelView.text = string(from: greenSliderView)
+        blueLabelView.text = string(from: blueSliderView)
     }
-
+    
+    private func string(from slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
+    }
 }
-
