@@ -33,11 +33,11 @@ class ViewController: UIViewController {
         setColor()
         switch sender {
         case redSliderView:
-            redLabelView.text = string(from: redSliderView)
+            redLabelView.text = string(from: sender)
         case greenSliderView:
-            greenLabelView.text = string(from: greenSliderView)
+            greenLabelView.text = string(from: sender)
         default:
-            blueLabelView.text = string(from: blueSliderView)
+            blueLabelView.text = string(from: sender)
         }
         
     }
